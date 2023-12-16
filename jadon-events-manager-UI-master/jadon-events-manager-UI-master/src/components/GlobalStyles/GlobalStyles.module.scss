@@ -1,0 +1,44 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #c62127;
+    --primary-hover-color: #c73b40;
+    --secondary-color: #9e7856;
+    --secondary-hover-color: #ae8866;
+    --primary-admin-color: #212b36;
+    --primary-admin-hover-color: #313f4e;
+    --text-color: #212121;
+    --white-color: #fff;
+    --black-color: #000;
+    --blue: #0d6efd;
+    --red: #dc3545;
+    --grey: #6c757d;
+    --green: #198754;
+    --yellow: #ffc107;
+    --cyan: #0dcaf0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: inherit;
+}

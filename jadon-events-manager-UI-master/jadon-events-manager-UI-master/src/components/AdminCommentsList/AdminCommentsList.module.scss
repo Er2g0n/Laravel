@@ -1,0 +1,224 @@
+.container {
+    width: 900px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.search-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    input {
+        width: 30%;
+        font-size: 1.6rem;
+        outline: none;
+        border: 1px solid #e9e9e9;
+        height: 20px;
+        padding: 20px 10px;
+        color: var(--primary-admin-color);
+    }
+}
+
+.comment-table {
+    width: 100%;
+    font-size: 1.6rem;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.comment-table th,
+.comment-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.comment-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.comment-table thead {
+    tr {
+        height: 50px;
+    }
+}
+
+.delete-button {
+    font-size: 1.8rem;
+    outline: none;
+    text-decoration: none;
+    color: var(--grey);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: color 0.3s ease-in-out;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-count {
+    margin-top: 10px;
+}
+
+.pagination button {
+    padding: 5px 12px;
+    color: var(--primary-admin-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-admin-color);
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: var(--primary-admin-color);
+    color: var(--white-color);
+    cursor: default;
+}
+
+
+.column-name {
+    width: 300px;
+}
+
+.column-status {
+    width: 150px;
+}
+
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.error-message {
+    color: var(--red);
+    margin-bottom: 10px;
+    height: 15px;
+}
+
+/* Loading Animation */
+.loading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--primary-color);
+    border-top: 5px solid var(--white-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.list-content {
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    .action-button {
+        opacity: 0;
+    }
+
+
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        .action-button {
+            opacity: 1;
+        }
+
+    }
+}
+
+.action-button {
+    position: absolute;
+    right: 160px;
+    top: 10px;
+    width: 30px;
+    background-color: var(--white-color);
+    text-align: center;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: #f0f2f5;
+
+        .delete-button {
+            color: var(--red);
+        }
+    }
+}
+
+.checkAll-button {
+    border: 1px solid var(--green);
+    outline: none;
+    background-color: var(--white-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--green);
+    padding: 0 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+        color: var(--white-color);
+        background-color: var(--green);
+    }
+
+}
+
+.checked {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--green);
+    color: var(--white-color);
+    padding: 2px 0;
+    text-align: center;
+}
+
+.uncheck {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--red);
+    padding: 2px 0;
+    text-align: center;
+    animation: fadeInOut 1s infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

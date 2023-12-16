@@ -1,0 +1,319 @@
+.main-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 90px;
+    background-color: transparent;
+}
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 400px;
+}
+
+.grid {
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.name {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-sticky {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.name-1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 75px;
+        width: 40px;
+        height: 1px;
+        background-color: var(--white-color);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 75px;
+        width: 40px;
+        height: 1px;
+        background-color: var(--white-color);
+    }
+}
+
+.name-1-sticky {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-color);
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 75px;
+        width: 40px;
+        height: 1px;
+        background-color: var(--black-color);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 75px;
+        width: 40px;
+        height: 1px;
+        background-color: var(--black-color);
+    }
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 10px;
+    list-style: none;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+
+    &:hover .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    &:hover .nav-link::after {
+        transform: scaleX(1);
+    }
+
+    &:hover .nav-link {
+        color: var(--white-color);
+    }
+
+    &:hover .nav-link-sticky::after {
+        transform: scaleX(1);
+    }
+
+    &:hover .nav-link-sticky {
+        color: var(--primary-color);
+    }
+
+
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    display: flex;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--white-color);
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white-color);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+        bottom: -4px;
+    }
+}
+
+.nav-link-active {
+    color: var(--white-color);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white-color);
+        bottom: -4px;
+        transform: scaleX(1);
+    }
+}
+
+.nav-link-sticky {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.45rem;
+    font-weight: 500;
+    color: #999;
+    cursor: pointer;
+    display: flex;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--primary-color);
+
+        &::after {
+            transform: scaleX(1);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+        bottom: -4px;
+    }
+}
+
+.nav-link-sticky-active {
+    color: var(--primary-color);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        bottom: -4px;
+        transform: scaleX(1);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 55px;
+    border-radius: var(--border-radius-default);
+    background-color: var(--white-color);
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 16px 16px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    visibility: hidden;
+    pointer-events: none;
+
+    li {
+        height: 35px;
+        border-radius: var(--border-radius-default);
+        display: flex;
+        align-items: center;
+
+        &:hover {
+
+            background-color: rgba(6, 106, 201, 0.1);
+
+            a,
+            div {
+                color: var(--primary-color);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -35px;
+        left: 0;
+        width: 100%;
+        height: 35px;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.dropdown-item {
+    text-decoration: none;
+    font-size: var(--font-size-normal);
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 6.4px 16px;
+}
+
+.fadeIn {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fadeOut {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link-clicked {
+    color: red;
+}
+
+.nav-item-size {
+    font-size: 1.8rem;
+}
+
+.text {
+    text-decoration: none;
+    padding-left: 5px;
+}
